@@ -1,1 +1,190 @@
-
+<html lang="ar" dir="rtl">
+<head w-tid="1"><style>html{min-height:100%}.ctxmenu{position:fixed;border:1px solid #999;padding:2px 0;box-shadow:#aaa 3px 3px 3px;background:#fff;margin:0;z-index:9999;overflow-y:auto;font:15px Verdana, sans-serif;box-sizing:border-box}.ctxmenu li{margin:1px 0;display:block;position:relative;user-select:none}.ctxmenu li.heading{font-weight:bold;margin-left:-5px}.ctxmenu li span{display:block;padding:2px 20px;cursor:default}.ctxmenu li a{color:inherit;text-decoration:none}.ctxmenu li.icon{padding-left:15px}.ctxmenu img.icon{position:absolute;width:18px;left:10px;top:2px}.ctxmenu li.disabled{color:#ccc}.ctxmenu li.divider{border-bottom:1px solid #aaa;margin:5px 0}.ctxmenu li.interactive:hover{background:rgba(0, 0, 0, .1)}.ctxmenu li.submenu::after{content:"";position:absolute;display:block;top:0;bottom:0;right:.4em;margin:auto .1rem auto auto;border-right:1px solid #000;border-top:1px solid #000;transform:rotate(45deg);width:.3rem;height:.3rem}.ctxmenu li.submenu.disabled::after{border-color:#ccc}</style><base href="" simulated-href="https://websim.design/" w-tid="2">
+    <link rel="stylesheet" href="/fonts.css?v=712bd055b2805420327d1b8cd8c9aba0de1b644f">
+    <link rel="stylesheet" href="/ctxmenu.css?v=712bd055b2805420327d1b8cd8c9aba0de1b644f">
+    <title>Raghad</title>
+    
+    
+    <style w-tid="3">
+    /* Reset and base styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #ffffff;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+    
+    .container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        width: 90%;
+        max-width: 800px;
+    }
+    
+    h1, h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        color: #00ffff;
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    
+    h2 {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+    
+    label {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+    
+    select {
+        width: 100%;
+        padding: 0.75rem;
+        border-radius: 10px;
+        border: none;
+        background: rgba(255, 255, 255, 0.2);
+        color: #000000;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+        appearance: none;
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+        background-repeat: no-repeat;
+        background-position: right 0.7rem top 50%;
+        background-size: 0.65rem auto;
+        padding-right: 2rem;
+    }
+    
+    select:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+    }
+    
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    }
+    
+    #videoPlayer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .fullscreen-btn {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .fullscreen-btn:hover {
+        background: rgba(0, 0, 0, 0.7);
+    }
+    
+    @media (max-width: 600px) {
+        body {
+            padding: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            padding: 1.5rem;
+        }
+        
+        h1 {
+            font-size: 2rem;
+        }
+        
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+    </style></head><body w-tid="4">
+    <div class="container" w-tid="5">
+        <label for="serverSelect" w-tid="7">اختار السيرفر</label>
+        <select id="serverSelect" onchange="updateIframe(this.value)" w-tid="8">
+            {% for server in server_links %}
+                <option value="{{ server.url }}" w-tid="9">{{ server.name }}</option>
+            {% endfor %}
+        </select>
+            {% if server_links %}
+            <div class="video-container" w-tid="11">
+                <div class="video-container" w-tid="11">
+                    <iframe
+                        id="videoPlayer"
+                        src="{{ server_links[0].url }}"
+                        title="Video Player"
+                        allowfullscreen=""
+                        w-tid="12"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        sandbox="allow-scripts allow-same-origin"
+                    ></iframe>            </div>
+        {% else %}
+            <p w-tid="14">No server links available for this episode.</p>
+        {% endif %}
+    </div>
+    
+    <script type="text/javascript" src="https://us-assets.i.posthog.com/static/recorder.js?v=1.170.1"></script><script w-tid="15">
+    function updateIframe(source) {
+        var iframe = document.getElementById('videoPlayer');
+        iframe.src = source;
+    }
+    
+    function toggleFullscreen() {
+        var iframe = document.getElementById('videoPlayer');
+        if (!document.fullscreenElement) {
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) { // Firefox
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) { // IE/Edge
+                document.msExitFullscreen();
+            }
+        }
+    }
+    </script>
+    </body></html>
